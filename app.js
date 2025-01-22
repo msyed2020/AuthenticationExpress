@@ -8,11 +8,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var SQLiteStorage = require('connect-sqlite3')(session);
+var SQLiteStorage = require('connect-sqlite3')(sesh);
+var indexRouter = require('./route/index');
 
 var app = express();
 
 app.locals.pluralize = require('pluralize');
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -20,7 +25,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser);
 app.use(express.static(path.join(__dirname, 'public')));
 // a session secret used to compute
-app.use(session({
+/*
+app.use(sesh({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
@@ -35,7 +41,7 @@ app.use(function(req, res, next) {
     req.session.messages = [];
     next();
 })
-
+*/
 // 404 error handling
 app.use(function(req, res, next) {
     next(createError(404));
