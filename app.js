@@ -11,18 +11,19 @@ var logger = require('morgan');
 var SQLiteStorage = require('connect-sqlite3')(sesh);
 var indexRouter = require('./route/index');
 
+
 var app = express();
 
 app.locals.pluralize = require('pluralize');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.use('/', indexRouter);
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-app.use(cookieParser);
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // a session secret used to compute
 /*
