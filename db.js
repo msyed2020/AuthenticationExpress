@@ -23,10 +23,10 @@ db.serialize(function() {
         user_id INTEGER NOT NULL, \
         provider TEXT NOT NULL, \
         subject TEXT NOT NULL, \
-        UNIQUE(provider, subject) \
+        UNIQUE (provider, subject) \
     )');
 
-    db.run('CREATE TABLE IF NOT EXISTS user ( \
+    db.run('CREATE TABLE IF NOT EXISTS exer ( \
         id INTEGER PRIMARY KEY, \
         owner_id INTEGER NOT NULL, \
         title TEXT NOT NULL, \
