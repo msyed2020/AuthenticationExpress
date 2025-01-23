@@ -2,14 +2,24 @@ body {
     background: rgb(228, 233, 47);
     background: radial-gradient(circle, rgba(228, 233, 47, 0) 
     40%, rgba(197, 194, 249, 1) 74%, rgba(0, 212, 255, 1) 100%);
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: 14px 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    line-height: 1.4em;
+    color: #111111;
+    min-width: 230px;
+    max-width: 550px;
+    font-weight: 300;
 }
 
-.todohome {
+.todoapp {
     margin: 130px 0 40px 0;
     position: relative;
 }
 
-.todohome h1 {
+.todoapp h1 {
     position: absolute;
     top: -140px;
     width: 100%;
@@ -19,18 +29,18 @@ body {
     color: #b83f45;
 }
 
-.todohome h3 {
+.todoapp h3 {
     padding-bottom: 48px;
     font-size: 28px;
     font-weight: 300;
 }
 
-.todohome section {
+.todoapp section {
     padding-top: 1px;
     text-align: center;
 }
 
-.todohome .button {
+.todoapp .button {
     padding: 13px 45px;
     font-size: 16px;
     font-weight: 500;
@@ -39,7 +49,7 @@ body {
     background: #d83f45;
 }
 
-.todohome a.button {
+.todoapp a.button {
     text-decoration: none;
 
 }
