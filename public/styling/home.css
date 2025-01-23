@@ -19,3 +19,23 @@ body {
     color: #b83f45;
 }
 
+.todohome section {
+    padding-top: 1px;
+    text-align: center;
+}
+
+.todohome button {
+    padding: 13px 45px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    color: #d83f45;
+}
+
+.alert {
+    padding: 40px;
+    background-color: #f44366;
+    color: white;
+    margin-bottom: 0px;
+}
