@@ -14,6 +14,18 @@ body {
     font-weight: 300;
 }
 
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
 .todoapp {
     background: white;
     margin: 130px 0 40px 0;
