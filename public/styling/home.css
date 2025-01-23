@@ -19,6 +19,12 @@ body {
     color: #b83f45;
 }
 
+.todohome h3 {
+    padding-bottom: 48px;
+    font-size: 28px;
+    font-weight: 300;
+}
+
 .todohome section {
     padding-top: 1px;
     text-align: center;
