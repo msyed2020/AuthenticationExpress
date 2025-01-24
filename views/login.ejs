@@ -11,6 +11,13 @@
             <h3>Express App</h3>
             <h1>Sign In</h1>
             <hr>
+            <form action="/login/password" method="post">
+                <section>
+                    <label for="username" class="">Username</label>
+                    <input id="username" name="username" type="text"
+                    autocomplete="current-password" required autofocus>
+                </section>
+            </form>
         <section>
             <h2 class="alert"><%= message %></h2>
             <hr>
