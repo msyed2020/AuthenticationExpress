@@ -7,6 +7,7 @@ var passport = require('passport');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var authRouter = require('./route/auth');
 
 var SQLiteStorage = require('connect-sqlite3')(sesh);
 var indexRouter = require('./route/index');
@@ -19,6 +20,7 @@ app.locals.pluralize = require('pluralize');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use('/', indexRouter);
+app.use('/', authRouter);
 
 app.use(logger('dev'));
 app.use(express.json());
