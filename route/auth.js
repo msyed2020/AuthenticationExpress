@@ -6,7 +6,14 @@ var crypto = require('crypto');
 var db = require('/db');
 
 passport.use(new localStrategy(function verify(username, password, callback) {
-    
+    db.get('SELECT * FROM users WHERE username = ?', [username], function(err, row) {
+        if (err) {
+            return callback(err);
+        }
+        if (!row) {
+            return callback(null, false, {message: "Incorrect username or password"});
+        }
+    })
 }));
 
 router.get('/login', function(req, res, next) {
