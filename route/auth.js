@@ -36,4 +36,4 @@ router.post('/login/password', passport.authenticate('local', {
     failureRedirect: '/login'
 }))
 
-module.exports = router;
+module.exports = router; // perhaps inspect this when testing. File may not work
