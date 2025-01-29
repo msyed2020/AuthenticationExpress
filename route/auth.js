@@ -28,8 +28,17 @@ passport.use(new localStrategy(function verify(username, password, callback) {
 }));
 
 passport.serializeUser(function(user, callback) {
-    
+    process.nextTick(function() {
+        return callback(null, {id: user.id, username: user.username, name: user.name});
+    });
 });
+
+passport.deserializeUser(function(user, callback) {
+    process.nextTick(function() {
+        return callback(null, user);
+    });
+});
+
 
 router.get('/login', function(req, res, next) {
     res.render('login');

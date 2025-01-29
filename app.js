@@ -7,9 +7,10 @@ var passport = require('passport');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var authRouter = require('./route/auth');
 
 var SQLiteStorage = require('connect-sqlite3')(session);
+
+var authRouter = require('./route/auth');
 var indexRouter = require('./route/index');
 
 
