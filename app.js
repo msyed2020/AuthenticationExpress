@@ -2,14 +2,14 @@ require('dotenv').config();
 
 var createError = require('http-errors');
 var express = require('express');
-var sesh = require('express-session');
+var session = require('express-session');
 var passport = require('passport');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var authRouter = require('./route/auth');
 
-var SQLiteStorage = require('connect-sqlite3')(sesh);
+var SQLiteStorage = require('connect-sqlite3')(session);
 var indexRouter = require('./route/index');
 
 
@@ -28,8 +28,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 // a session secret used to compute
-/*
-app.use(sesh({
+
+app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
     req.session.messages = [];
     next();
 })
-*/
+
 // 404 error handling
 app.use(function(req, res, next) {
     next(createError(404));
