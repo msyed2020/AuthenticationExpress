@@ -27,6 +27,10 @@ passport.use(new localStrategy(function verify(username, password, callback) {
     });
 }));
 
+passport.serializeUser(function(user, callback) {
+    
+});
+
 router.get('/login', function(req, res, next) {
     res.render('login');
 });
