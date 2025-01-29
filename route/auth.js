@@ -1,3 +1,5 @@
+// AUTHENTICATION IS NOT WORKING. NEED TO FIX
+
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
