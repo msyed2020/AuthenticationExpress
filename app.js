@@ -37,6 +37,9 @@ app.use(session({
     store: new SQLiteStorage({db: 'sessionStorage.db', dir: './var/db'})
 }));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(passport.authenticate('session'));
 app.use(function(req, res, next) {
     var messages = req.session.messages || [];
